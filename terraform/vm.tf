@@ -15,6 +15,8 @@ module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
   version = "0.0.1-alpha"
   
+  vm_name = demo-vm
+  project             = var.project
   resource_group_name = local.resource_group_name
   location            = azurerm_resource_group.rg.location
   nic_id              = module.network.nic_id
