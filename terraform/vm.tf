@@ -30,8 +30,8 @@ module "azure-linux-vm" {
   memory_threshold_90 = 90
   cpu_threshold_80    = 0.2
   cpu_threshold_90    = 90
-  disk_space_threshold = 10
-  os_disk_free_space_percentage_threshold = 10
+  disk_space_threshold = 0.2
+  os_disk_free_space_percentage_threshold = 0.2
   email_action_receivers = [
     {
       name          = "OpsTeam"
