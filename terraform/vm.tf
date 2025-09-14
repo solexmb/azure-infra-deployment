@@ -16,7 +16,7 @@ module "azure-linux-vm" {
   version = "0.0.1-alpha-3"
   
   vm_name = "${local.primary_prefix}-demo" 
-  project             = var.project
+#   project             = var.project
   resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
   location            = azurerm_resource_group.primary_automation_dev_rg.location
   nic_id              = module.azure-network.nic_id
