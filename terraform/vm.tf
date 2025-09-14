@@ -39,7 +39,7 @@ module "azure-linux-vm" {
     },
     {
       name          = "DevTeam"
-      email_address = "dev@example.com"
+      email_address = "devxample.com"
     }
   ]
 #   tags = {
