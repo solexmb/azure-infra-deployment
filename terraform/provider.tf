@@ -22,5 +22,6 @@ terraform {
 }
 
 provider "azurerm" {
+  use_cli = false
   features {}
 }
