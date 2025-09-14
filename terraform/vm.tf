@@ -32,5 +32,9 @@ module "azure-linux-vm" {
   cpu_threshold_90    = 90
   disk_space_threshold = 10
   os_disk_free_space_percentage_threshold = 10
+  tags = {
+    Environment = "dev"
+    Project     = "demo"
+  }
 
 }
