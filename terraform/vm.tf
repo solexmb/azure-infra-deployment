@@ -13,7 +13,7 @@
 
 module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-  version = "0.0.1-alpha-4"
+  version = "0.0.1-alpha-10"
   
   vm_name = "${local.primary_prefix}-demo" 
 #   project             = var.project
@@ -23,4 +23,29 @@ module "azure-linux-vm" {
   vm_size             = "Standard_B1s"
   admin_username      = "azureuser"
   ssh_public_key      = var.ssh_public_key
+
+  enable_monitoring   = true
+  law_name            = "base-automation"
+  memory_threshold_80 = 80
+  memory_threshold_90 = 90
+  cpu_threshold_80    = 80
+  cpu_threshold_90    = 90
+  disk_space_threshold = 10
+  os_disk_free_space_percentage_threshold = 10
+  email_action_receivers = [
+    {
+      name          = "OpsTeam"
+      email_address = "solomon.balogun.m@gmail.com"
+    },
+    {
+      name          = "DevTeam"
+      email_address = "dev@example.com"
+    }
+  ]
+#   tags = {
+#     Environment = "dev"
+#     Project     = "demo"
+#   }
+
+
 }
