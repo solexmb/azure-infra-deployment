@@ -36,3 +36,9 @@ variable "environment" {
 variable "location" {
   type = string
 }
+
+variable "tags" {
+  description = "Tags to apply to all resources"
+  type        = map(string)
+  default     = {}
+}
