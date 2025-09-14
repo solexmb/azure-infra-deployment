@@ -24,7 +24,7 @@ module "azure-linux-vm" {
   admin_username      = "azureuser"
   ssh_public_key      = var.ssh_public_key
 
-  enable_monitoring   = false
+  enable_monitoring   = true
   law_name            = "base-automation"
   memory_threshold_80 = 80
   memory_threshold_90 = 90
