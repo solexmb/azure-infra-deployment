@@ -1,6 +1,6 @@
 module "azure-network" {
   source  = "app.terraform.io/solexb/azure-network/azurerm"
-  version = "0.0.1-alpha-4"
+  version = "0.0.1-alpha-5"
   
   project             = var.project
   resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
