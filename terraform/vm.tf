@@ -35,7 +35,7 @@ module "azure-linux-vm" {
   email_action_receivers = [
     {
       name          = "OpsTeam"
-      email_address = "ops@example.com"
+      email_address = "solomon.balogun.m@gmail.com"
     },
     {
       name          = "DevTeam"
