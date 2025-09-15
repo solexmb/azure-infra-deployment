@@ -13,7 +13,7 @@
 
 module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-  version = "0.0.1-alpha-16"
+  version = "0.0.1-alpha-21"
   
   vm_name = "${local.primary_prefix}-demo" 
 #   project             = var.project
