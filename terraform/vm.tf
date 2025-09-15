@@ -13,7 +13,7 @@
 
 module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-  version = "0.0.1-alpha-15"
+  version = "0.0.1-alpha-16"
   
   vm_name = "${local.primary_prefix}-demo" 
 #   project             = var.project
@@ -42,6 +42,10 @@ module "azure-linux-vm" {
       email_address = "dev@example.com"
     }
   ]
+  identity = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
 #   tags = {
 #     Environment = "dev"
 #     Project     = "demo"
