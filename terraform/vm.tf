@@ -13,7 +13,7 @@
 
 module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-  version = "0.0.1-alpha-34"
+  version = "0.0.1-alpha-35"
   
   vm_name = "${local.primary_prefix}-demo" 
 #   project             = var.project
@@ -27,7 +27,7 @@ module "azure-linux-vm" {
   enable_monitoring   = true
   law_name            = "base-automation"
   memory_threshold_80 = 80
-  memory_threshold_90 = 90
+  memory_threshold_90 = 10
   cpu_threshold_80    = 0.2
   cpu_threshold_90    = 90
   disk_space_threshold = 0.2
