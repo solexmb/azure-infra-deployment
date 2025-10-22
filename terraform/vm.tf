@@ -25,13 +25,7 @@ module "azure-linux-vm" {
   ssh_public_key      = var.ssh_public_key
 
   enable_monitoring   = false
-  law_name            = "base-automation"
-  memory_threshold_80 = 80
-  memory_threshold_90 = 10
-  cpu_threshold_80    = 0.2
-  cpu_threshold_90    = 90
-  disk_space_threshold = 0.2
-  os_disk_free_space_percentage_threshold = 0.2
+
   # email_action_receivers = [
   #   {
   #     name          = "OpsTeam"
