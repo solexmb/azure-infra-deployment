@@ -24,18 +24,18 @@ module "azure-linux-vm" {
   admin_username      = "azureuser"
   ssh_public_key      = var.ssh_public_key
 
-  enable_monitoring   = false
+  enable_monitoring   = true
 
-  # email_action_receivers = [
-  #   {
-  #     name          = "OpsTeam"
-  #     email_address = "solomon.balogun.m@gmail.com"
-  #   },
-  #   {
-  #     name          = "DevTeam"
-  #     email_address = "dev@example.com"
-  #   }
-  # ]
+  email_action_receivers = [
+    {
+      name          = "OpsTeam"
+      email_address = "solomon.balogun.m@gmail.com"
+    },
+    {
+      name          = "DevTeam"
+      email_address = "dev@example.com"
+    }
+  ]
   identity = {
     type         = "SystemAssigned"
     identity_ids = []
