@@ -37,3 +37,8 @@ variable "location" {
   type = string
 }
 
+variable "enable_monitoring" {
+  description = "When true, deploy monitoring alerts and diagnostics."
+  type        = bool
+  default     = false
+}
