@@ -50,46 +50,40 @@ module "azure-linux-vm" {
 }
 #
 
-# module "azure-linux-vm-1" {
-#   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-#   version = "0.0.1-alpha-35"
+module "azure-linux-vm-1" {
+  source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
+  version = "0.1.0-alpha-7"
   
-#   vm_name = "${local.primary_prefix}-demo-1" 
-# #   project             = var.project
-#   resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
-#   location            = azurerm_resource_group.primary_automation_dev_rg.location
-#   nic_id              = module.azure-network.nic_id
-#   vm_size             = "Standard_B1s"
-#   admin_username      = "azureuser"
-#   ssh_public_key      = var.ssh_public_key
+  vm_name = "${local.primary_prefix}-demo-2" 
+#   project             = var.project
+  resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
+  location            = azurerm_resource_group.primary_automation_dev_rg.location
+  nic_id              = module.azure-network.nic_id
+  vm_size             = "Standard_B1s"
+  admin_username      = "azureuser"
+  ssh_public_key      = var.ssh_public_key
 
-#   enable_monitoring   = true
-#   law_name            = "base-automation"
-#   memory_threshold_80 = 80
-#   memory_threshold_90 = 10
-#   cpu_threshold_80    = 0.2
-#   cpu_threshold_90    = 90
-#   disk_space_threshold = 0.2
-#   os_disk_free_space_percentage_threshold = 0.2
-#   email_action_receivers = [
-#     {
-#       name          = "OpsTeam"
-#       email_address = "solomon.balogun.m@gmail.com"
-#     },
-#     {
-#       name          = "DevTeam"
-#       email_address = "dev@example.com"
-#     }
-#   ]
-#   identity = {
-#     type         = "SystemAssigned"
-#     identity_ids = []
+  enable_monitoring   = true
+  log_analytics_workspace_id = data.azurerm_log_analytics_workspace.law.id
+
+  email_action_receivers = [
+    {
+      name          = "OpsTeam"
+      email_address = "solomon.balogun.m@gmail.com"
+    },
+    {
+      name          = "DevTeam"
+      email_address = "dev@example.com"
+    }
+  ]
+  identity = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
+#   tags = {
+#     Environment = "dev"
+#     Project     = "demo"
 #   }
-# #   tags = {
-# #     Environment = "dev"
-# #     Project     = "demo"
-# #   }
 
 
-# }
-#
+}
