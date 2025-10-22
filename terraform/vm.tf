@@ -58,7 +58,7 @@ module "azure-linux-vm-1" {
 #   project             = var.project
   resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
   location            = azurerm_resource_group.primary_automation_dev_rg.location
-  nic_id              = module.azure-network.nic_id
+  nic_id              = module.azure-network-1.nic_id
   vm_size             = "Standard_B1s"
   admin_username      = "azureuser"
   ssh_public_key      = var.ssh_public_key
