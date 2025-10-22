@@ -10,5 +10,5 @@ resource "azurerm_log_analytics_workspace" "vm_law" {
   resource_group_name = azurerm_resource_group.primary_automation_cu_rg.name
   sku                 = "PerGB2018"
   retention_in_days   = 30
-  tags                = var.tags
+#   tags                = var.tags
 }
