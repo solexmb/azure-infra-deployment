@@ -43,8 +43,8 @@ variable "enable_monitoring" {
   default     = false
 }
 
-variable "admin-group" {
-  description = "When true, deploy monitoring alerts and diagnostics."
-  type        = list(string)
-  default     = ["6c0674ed-7221-4447-9711-5b3caf717148"]
-}
+# variable "admin-group" {
+#   description = "When true, deploy monitoring alerts and diagnostics."
+#   type        = list(string)
+#   default     = ["6c0674ed-7221-4447-9711-5b3caf717148"]
+# }
