@@ -1,7 +1,7 @@
 # data "azurerm_subscription" "current" {}
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_dashboard_grafana" "example" {
+resource "azurerm_dashboard_grafana" "grafana" {
   name                              = "test-grafana"
   resource_group_name               = azurerm_resource_group.primary_automation_dev_rg.name
   location                          = azurerm_resource_group.primary_automation_dev_rg.location
