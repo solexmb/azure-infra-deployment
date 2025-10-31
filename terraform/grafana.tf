@@ -2,7 +2,7 @@
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_dashboard_grafana" "grafana" {
-  name                              = "grafana-poc"
+  name                              = "grafana-poc-2123321"
   resource_group_name               = azurerm_resource_group.primary_automation_dev_rg.name
   location                          = azurerm_resource_group.primary_automation_dev_rg.location
   grafana_major_version             = 11
