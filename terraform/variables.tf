@@ -46,5 +46,5 @@ variable "enable_monitoring" {
 variable "admin-group" {
   description = "When true, deploy monitoring alerts and diagnostics."
   type        = string
-  default     = ""
+  default     = []
 }
