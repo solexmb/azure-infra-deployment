@@ -30,5 +30,5 @@ resource "azurerm_role_assignment" "grafana_monitoring_reader" {
 resource "azurerm_role_assignment" "grafana-admin" {
   scope                = "/subscriptions/${data.azurerm_client_config.current.subscription_id}"
   role_definition_name = "Monitoring Reader"
-  principal_id         = var.admin-group
+  principal_id         = var.admin-group[0]
 }
