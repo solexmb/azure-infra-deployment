@@ -21,7 +21,8 @@ resource "azurerm_dashboard_grafana" "grafana" {
 
 resource "azurerm_role_assignment" "grafana_monitoring_reader" {
 #   scope                = data.azurerm_subscription.current.id
-  scope                = "/subscriptions/${data.azurerm_client_config.current.subscription_id}"
+#   scope                = "/subscriptions/${data.azurerm_client_config.current.subscription_id}"
+  scope                = azurerm_resource_group.primary_automation_dev_rg.id
   role_definition_name = "Monitoring Reader"
   principal_id         = azurerm_dashboard_grafana.grafana.identity[0].principal_id
 }
