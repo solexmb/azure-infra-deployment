@@ -42,3 +42,9 @@ variable "enable_monitoring" {
   type        = bool
   default     = false
 }
+
+variable "admin-group" {
+  description = "When true, deploy monitoring alerts and diagnostics."
+  type        = bool
+  default     = false
+}
