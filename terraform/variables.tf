@@ -43,8 +43,8 @@ variable "enable_monitoring" {
   default     = false
 }
 
-variable "admin-group" {
-  description = "When true, deploy monitoring alerts and diagnostics."
-  type        = string
-  default     = ""
-}
+# variable "admin-group" {
+#   description = "When true, deploy monitoring alerts and diagnostics."
+#   type        = string
+#   default     = ""
+# }
