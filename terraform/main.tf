@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "primary_automation_dev_rg" {
 #
 
 # PRIMARY REGION RESOURCE GROUP
-resource "azurerm_resource_group" "automation_prod_rg" {
-  name     = "${local.primary_prefix}-prod-rg"
-  location = var.location
-}
+# resource "azurerm_resource_group" "automation_prod_rg" {
+#   name     = "${local.primary_prefix}-prod-rg"
+#   location = var.location
+# }
