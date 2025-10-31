@@ -29,6 +29,6 @@ resource "azurerm_role_assignment" "grafana_monitoring_reader" {
 
 resource "azurerm_role_assignment" "grafana-admin" {
   scope                = azurerm_resource_group.primary_automation_dev_rg.id
-  role_definition_name = "Monitoring Reader"
+  role_definition_name = "Grafana Admin"
   principal_id         = var.admin-group[0]
 }
