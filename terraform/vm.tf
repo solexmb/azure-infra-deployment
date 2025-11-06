@@ -13,9 +13,9 @@
 
 module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-  version = "0.1.0-alpha-24"
+  version = "0.1.0-alpha-25"
   
-  vm_name = "${local.primary_prefix}-demo-cloud-platform-dev-automation" 
+  vm_name = substr("${local.primary_prefix}-demo-cloud-platform-dev-automation", 0, 64) 
 #   project             = var.project
   resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
   location            = azurerm_resource_group.primary_automation_dev_rg.location
