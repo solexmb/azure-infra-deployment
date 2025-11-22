@@ -52,6 +52,7 @@ module "azure-linux-vm" {
     Environment = "dev"
     Project     = "demo"
   }
+  cpu_threshold_90 = 0.2
 
 
 }
