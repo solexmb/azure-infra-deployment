@@ -38,12 +38,12 @@ module "azure-linux-vm" {
       email_address = "dev@example.com"
     }
   ]
-  # email_action_receivers_snow = [
-  #   {
-  #     name          = "snow"
-  #     email_address = "solomonbalogun124@gmail.com"
-  #   }
-  # ]
+  email_action_receivers_snow = [
+    {
+      name          = "snow"
+      email_address = "solomonbalogun124@gmail.com"
+    }
+  ]
   identity = {
     type         = "SystemAssigned"
     identity_ids = []
