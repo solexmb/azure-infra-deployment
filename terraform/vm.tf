@@ -26,7 +26,7 @@ module "azure-linux-vm" {
   ssh_public_key      = var.ssh_public_key
 
   enable_monitoring   = true
-  suppress_alerts = true
+  suppress_alerts = false
   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.law.id
 
   email_action_receivers = [
