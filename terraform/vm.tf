@@ -11,51 +11,52 @@
 #   ssh_public_key      = var.ssh_public_key
 # }
 
-# module "azure-linux-vm" {
-#   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-#   version = "0.1.0-alpha-34"
+module "azure-linux-vm" {
+  source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
+  version = "0.1.0-alpha-34"
   
-#   vm_name = substr("${local.primary_prefix}-demo-cloud-platform-dev-automation", 0, 64) 
-# #   project             = var.project
-#   resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
-#   location            = azurerm_resource_group.primary_automation_dev_rg.location
-#   nic_id  = module.azure-network.nic_ids["demo1"]
-#   # nic_id              = module.azure-network.nic_id
-#   vm_size             = "Standard_B1s"
-#   admin_username      = "azureuser"
-#   ssh_public_key      = var.ssh_public_key
+  vm_name = substr("${local.primary_prefix}-demo-cloud-platform-dev-automation", 0, 64) 
+#   project             = var.project
+  resource_group_name = azurerm_resource_group.primary_automation_dev_rg.name
+  location            = azurerm_resource_group.primary_automation_dev_rg.location
+  nic_id  = module.azure-network.nic_ids["demo1"]
+  # nic_id              = module.azure-network.nic_id
+  vm_size             = "Standard_B1s"
+  admin_username      = "azureuser"
+  ssh_public_key      = var.ssh_public_key
 
-#   enable_monitoring   = true
-#   log_analytics_workspace_id = data.azurerm_log_analytics_workspace.law.id
+  enable_monitoring   = true
+  enable_suppression = true
+  log_analytics_workspace_id = data.azurerm_log_analytics_workspace.law.id
 
-#   email_action_receivers = [
-#     {
-#       name          = "ops"
-#       email_address = "solomon.balogun.m@gmail.com"
-#     },
-#     {
-#       name          = "DevTeam"
-#       email_address = "dev@example.com"
-#     }
-#   ]
-#   email_action_receivers_snow = [
-#     {
-#       name          = "snow"
-#       email_address = "solomonbalogun124@gmail.com"
-#     }
-#   ]
-#   identity = {
-#     type         = "SystemAssigned"
-#     identity_ids = []
-#   }
-#   tags = {
-#     Environment = "dev"
-#     Project     = "demo"
-#   }
-#   cpu_threshold_90 = 0.2
+  email_action_receivers = [
+    {
+      name          = "ops"
+      email_address = "solomon.balogun.m@gmail.com"
+    },
+    {
+      name          = "DevTeam"
+      email_address = "dev@example.com"
+    }
+  ]
+  email_action_receivers_snow = [
+    {
+      name          = "snow"
+      email_address = "solomonbalogun124@gmail.com"
+    }
+  ]
+  identity = {
+    type         = "SystemAssigned"
+    identity_ids = []
+  }
+  tags = {
+    Environment = "dev"
+    Project     = "demo"
+  }
+  cpu_threshold_90 = 0.2
 
 
-# }
+}
 
 
 # module "azure-linux-vm-1" {
