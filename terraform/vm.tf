@@ -13,7 +13,7 @@
 
 module "azure-linux-vm" {
   source  = "app.terraform.io/solexb/azure-linux-vm/azurerm"
-  version = "1.0.2"
+  version = "1.0.3"
   
   vm_name = substr("${local.primary_prefix}-demo-cloud-platform-dev-automation", 0, 64) 
 #   project             = var.project
@@ -54,7 +54,7 @@ module "azure-linux-vm" {
     Project     = "demo"
   }
   cpu_threshold_90 = 0.2
-  memory_threshold_90 = 70
+  memory_threshold_90 = 80
 
 
 }
