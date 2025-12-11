@@ -54,7 +54,7 @@ module "azure-linux-vm" {
     Project     = "demo"
   }
   cpu_threshold_90 = 0.2
-  memory_threshold_90 = 80
+  memory_threshold_90 = 10
 
 
 }
